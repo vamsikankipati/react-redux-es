@@ -1,62 +1,51 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import React from 'react';
+//import './styles/style.less'
 
 
-class App extends Component {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.focusName = this.focusName.bind(this);
+    this.focusText = this.focusText.bind(this);
+    
+  }
 
-  render() {
+
+componentWillMount() {
+  console.log(this.props.message)
+  console.log("component will mount")
+}
+
+componentWDidMount() {
+  console.log("component did mount")
+}
+
+focusName() {
+  //Explicitly focus the text input using raw DOM API
+  this.refs.textInputName.focus();
+}
+focusText() {
+  //Explicitly focus the text input using raw DOM API
+  this.refs.textInputText.focus();
+}
+
+
+  render() { 
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-
-        </header>
-        <h1 className="App-title">Welcome to React</h1>
-        <p className="App-intro">
-          <br/>
-          <Router>
-          <div>
-          <MenuLink to="/about" label="About"/>
-          <hr/>
-          <Route path="/about" component={About}/>
-          </div>
-          </Router>
-        </p>
-
+      <div>
+        <center>
+          <h1> Welcome to my react application </h1>
+        <br/><br/><br/><br/><br/><br/>
+  Name: <input type="text" ref="textInputName" /><br/><br/>
+  Text : <input type="text" ref="textInputText" /><br/><br/>
+        <input type="button" value="Focus the text input Name" onClick={this.focusName} /><br/><br/>
+        <input type="button" value="Focus the text input Text" onClick={this.focusText} /><br/><br/>
+        
+        </center>
       </div>
     );
   }
 }
-
-const CustomLinkExample = () => (
-  <Router>
-    <div>
-      <MenuLink activeOnlyWhenExact={true} to="/" label="Home"/>
-      <MenuLink to="/about" label="About"/>
-      <hr/>
-
-      <Route path="/about" component={About}/>
-    </div>
-  </Router>
-)
-
-const MenuLink = ({ label, to, activeOnlyWhenExact }) => (
-  <Route path={to} exact={activeOnlyWhenExact} children={({ match }) => (
-    <div className={match ? 'active' : ''}>
-      {match ? '> ' : ''}<Link to={to}>{label}</Link>
-    </div>
-  )}/>
-)
-
-const About = () => (
-  <div>
-    <h2>About</h2>
-    <MenuLink to="/App" label="App"/>
-    <Route path="/App" component={App}/>
-  </div>
-)
 
 
 export default App;

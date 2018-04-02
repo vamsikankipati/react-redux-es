@@ -2,7 +2,7 @@ var path = require('path');
  var webpack = require('webpack');
 
  module.exports = {
-     entry: './src/app.js',
+     entry: './src/App.js',
      output: {
          path: path.resolve(__dirname, 'build'),
          filename: 'app.bundle.js'
@@ -15,6 +15,9 @@ var path = require('path');
                  query: {
                      presets: ['es2015', 'react']
                  }
+             },
+             {   test: /\.less$/,
+                 loader: "style!css!less"
              }
          ]
      },
