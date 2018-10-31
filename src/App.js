@@ -38,7 +38,7 @@ state = { activeItem: 'home' }
     return (
       <div>
 
-      <Menu size='massive'>
+      <Menu size='large'>
               <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
               <Menu.Item name='javascript' active={activeItem === 'javascript'} onClick={this.handleItemClick} />
               <Menu.Item name='react' active={activeItem === 'react'} onClick={this.handleItemClick} />
