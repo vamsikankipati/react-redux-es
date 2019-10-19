@@ -1,16 +1,11 @@
 import React from 'react';
 
-
-class App extends React.Component {
-
-  render() {
-    return (
-      <div>
-        {'Hello React Hooks !'}
-      </div>
-    );
-  }
+function App () {
+  return (
+    <div>
+      {'Hello React Hooks !'}
+    </div>
+  );
 }
-
 
 export default App;
