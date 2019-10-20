@@ -1,1 +1,1 @@
-A repo built on React Hooks and its related React libraries using latest HTML, CSS and ECMAScript specs.
+A repo built on React Hooks and its related React libraries using latest HTML, CSS, ECMAScript and web related specifications.
