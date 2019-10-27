@@ -7,7 +7,8 @@ export default function JavaScript() {
         style: {
             color: 'green',
             fontWeight: 'bold',
-            marginLeft: '1rem'
+            marginLeft: '1rem',
+            backgroundColor: 'lightGray'
         }
     });
 
